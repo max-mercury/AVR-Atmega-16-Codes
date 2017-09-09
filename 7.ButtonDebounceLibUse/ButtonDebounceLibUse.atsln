@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ButtonDebounceLibUse", "ButtonDebounceLibUse\ButtonDebounceLibUse.cproj", "{3A5FDAAE-7A32-45F1-BDE9-755176839F8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A5FDAAE-7A32-45F1-BDE9-755176839F8F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{3A5FDAAE-7A32-45F1-BDE9-755176839F8F}.Debug|AVR.Build.0 = Debug|AVR
+		{3A5FDAAE-7A32-45F1-BDE9-755176839F8F}.Release|AVR.ActiveCfg = Release|AVR
+		{3A5FDAAE-7A32-45F1-BDE9-755176839F8F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

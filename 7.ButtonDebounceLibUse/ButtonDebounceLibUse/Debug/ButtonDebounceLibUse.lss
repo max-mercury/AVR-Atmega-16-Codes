@@ -1,0 +1,268 @@
+
+ButtonDebounceLibUse.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000016e  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000006  00800060  00800060  000001e2  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  000001e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  000008b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000938  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000003e4  00000000  00000000  000009b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000000f2  00000000  00000000  00000d9c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002b3  00000000  00000000  00000e8e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  00001144  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000011b  00000000  00000000  00001188  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000c7  00000000  00000000  000012a3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee e6       	ldi	r30, 0x6E	; 110
+  68:	f1 e0       	ldi	r31, 0x01	; 1
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 36       	cpi	r26, 0x66	; 102
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 a3 00 	call	0x146	; 0x146 <main>
+  8a:	0c 94 b5 00 	jmp	0x16a	; 0x16a <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <buttonPressed>:
+int pressed[numOfBtn];
+int pressed_conf_lvl[numOfBtn];
+int released_conf_level[numOfBtn];
+
+int buttonPressed(int btn_num,unsigned char pinOfBtn, unsigned char portBit, int conf_lvl)
+{
+  92:	cf 93       	push	r28
+  94:	df 93       	push	r29
+  96:	0f 92       	push	r0
+  98:	cd b7       	in	r28, 0x3d	; 61
+  9a:	de b7       	in	r29, 0x3e	; 62
+  9c:	dc 01       	movw	r26, r24
+  9e:	69 83       	std	Y+1, r22	; 0x01
+  a0:	b9 01       	movw	r22, r18
+	if(bit_is_clear(pinOfBtn, portBit))
+  a2:	89 81       	ldd	r24, Y+1	; 0x01
+  a4:	90 e0       	ldi	r25, 0x00	; 0
+  a6:	9c 01       	movw	r18, r24
+  a8:	02 c0       	rjmp	.+4      	; 0xae <buttonPressed+0x1c>
+  aa:	35 95       	asr	r19
+  ac:	27 95       	ror	r18
+  ae:	4a 95       	dec	r20
+  b0:	e2 f7       	brpl	.-8      	; 0xaa <buttonPressed+0x18>
+  b2:	20 fd       	sbrc	r18, 0
+  b4:	1d c0       	rjmp	.+58     	; 0xf0 <buttonPressed+0x5e>
+	{
+		pressed_conf_lvl[btn_num]++;
+  b6:	9d 01       	movw	r18, r26
+  b8:	22 0f       	add	r18, r18
+  ba:	33 1f       	adc	r19, r19
+  bc:	f9 01       	movw	r30, r18
+  be:	e0 5a       	subi	r30, 0xA0	; 160
+  c0:	ff 4f       	sbci	r31, 0xFF	; 255
+  c2:	80 81       	ld	r24, Z
+  c4:	91 81       	ldd	r25, Z+1	; 0x01
+  c6:	01 96       	adiw	r24, 0x01	; 1
+  c8:	91 83       	std	Z+1, r25	; 0x01
+  ca:	80 83       	st	Z, r24
+		released_conf_level[btn_num]=0;
+  cc:	2c 59       	subi	r18, 0x9C	; 156
+  ce:	3f 4f       	sbci	r19, 0xFF	; 255
+  d0:	f9 01       	movw	r30, r18
+  d2:	11 82       	std	Z+1, r1	; 0x01
+  d4:	10 82       	st	Z, r1
+		if(pressed_conf_lvl[btn_num] > conf_lvl)
+  d6:	68 17       	cp	r22, r24
+  d8:	79 07       	cpc	r23, r25
+  da:	64 f5       	brge	.+88     	; 0x134 <buttonPressed+0xa2>
+			if(pressed == 0)
+			{
+				pressed[btn_num] = 1;
+				return 1;
+			}
+			pressed_conf_lvl[btn_num]=0;
+  dc:	fd 01       	movw	r30, r26
+  de:	ee 0f       	add	r30, r30
+  e0:	ff 1f       	adc	r31, r31
+  e2:	e0 5a       	subi	r30, 0xA0	; 160
+  e4:	ff 4f       	sbci	r31, 0xFF	; 255
+  e6:	11 82       	std	Z+1, r1	; 0x01
+  e8:	10 82       	st	Z, r1
+		{
+			pressed[btn_num] = 0;
+			released_conf_level[btn_num]=0;
+		}
+	}
+	return 0;
+  ea:	80 e0       	ldi	r24, 0x00	; 0
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	27 c0       	rjmp	.+78     	; 0x13e <buttonPressed+0xac>
+			pressed_conf_lvl[btn_num]=0;
+		}
+	}
+	else
+	{
+		released_conf_level[btn_num]++;
+  f0:	9d 01       	movw	r18, r26
+  f2:	22 0f       	add	r18, r18
+  f4:	33 1f       	adc	r19, r19
+  f6:	f9 01       	movw	r30, r18
+  f8:	ec 59       	subi	r30, 0x9C	; 156
+  fa:	ff 4f       	sbci	r31, 0xFF	; 255
+  fc:	80 81       	ld	r24, Z
+  fe:	91 81       	ldd	r25, Z+1	; 0x01
+ 100:	01 96       	adiw	r24, 0x01	; 1
+ 102:	91 83       	std	Z+1, r25	; 0x01
+ 104:	80 83       	st	Z, r24
+		pressed_conf_lvl[btn_num] = 0;
+ 106:	20 5a       	subi	r18, 0xA0	; 160
+ 108:	3f 4f       	sbci	r19, 0xFF	; 255
+ 10a:	f9 01       	movw	r30, r18
+ 10c:	11 82       	std	Z+1, r1	; 0x01
+ 10e:	10 82       	st	Z, r1
+		if(released_conf_level[btn_num] > conf_lvl)
+ 110:	68 17       	cp	r22, r24
+ 112:	79 07       	cpc	r23, r25
+ 114:	94 f4       	brge	.+36     	; 0x13a <buttonPressed+0xa8>
+		{
+			pressed[btn_num] = 0;
+ 116:	aa 0f       	add	r26, r26
+ 118:	bb 1f       	adc	r27, r27
+ 11a:	fd 01       	movw	r30, r26
+ 11c:	ee 59       	subi	r30, 0x9E	; 158
+ 11e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 120:	11 82       	std	Z+1, r1	; 0x01
+ 122:	10 82       	st	Z, r1
+			released_conf_level[btn_num]=0;
+ 124:	ac 59       	subi	r26, 0x9C	; 156
+ 126:	bf 4f       	sbci	r27, 0xFF	; 255
+ 128:	11 96       	adiw	r26, 0x01	; 1
+ 12a:	1c 92       	st	X, r1
+ 12c:	1e 92       	st	-X, r1
+		}
+	}
+	return 0;
+ 12e:	80 e0       	ldi	r24, 0x00	; 0
+ 130:	90 e0       	ldi	r25, 0x00	; 0
+ 132:	05 c0       	rjmp	.+10     	; 0x13e <buttonPressed+0xac>
+ 134:	80 e0       	ldi	r24, 0x00	; 0
+ 136:	90 e0       	ldi	r25, 0x00	; 0
+ 138:	02 c0       	rjmp	.+4      	; 0x13e <buttonPressed+0xac>
+ 13a:	80 e0       	ldi	r24, 0x00	; 0
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+}
+ 13e:	0f 90       	pop	r0
+ 140:	df 91       	pop	r29
+ 142:	cf 91       	pop	r28
+ 144:	08 95       	ret
+
+00000146 <main>:
+#include "buttonlib.h"
+
+
+void main()
+{
+	DDRD &=~ (1<<PIND0); 
+ 146:	88 98       	cbi	0x11, 0	; 17
+	DDRC  |= (1<<PINC0);
+ 148:	a0 9a       	sbi	0x14, 0	; 20
+	PORTD |= (1<<PIND0);
+ 14a:	90 9a       	sbi	0x12, 0	; 18
+	while(1)
+	{
+		if(buttonPressed(0,PIND,0,500))
+		{
+			PORTC ^= (1<<PINC0);
+ 14c:	c1 e0       	ldi	r28, 0x01	; 1
+	DDRD &=~ (1<<PIND0); 
+	DDRC  |= (1<<PINC0);
+	PORTD |= (1<<PIND0);
+	while(1)
+	{
+		if(buttonPressed(0,PIND,0,500))
+ 14e:	60 b3       	in	r22, 0x10	; 16
+ 150:	80 e0       	ldi	r24, 0x00	; 0
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	40 e0       	ldi	r20, 0x00	; 0
+ 156:	24 ef       	ldi	r18, 0xF4	; 244
+ 158:	31 e0       	ldi	r19, 0x01	; 1
+ 15a:	0e 94 49 00 	call	0x92	; 0x92 <buttonPressed>
+ 15e:	00 97       	sbiw	r24, 0x00	; 0
+ 160:	b1 f3       	breq	.-20     	; 0x14e <main+0x8>
+		{
+			PORTC ^= (1<<PINC0);
+ 162:	85 b3       	in	r24, 0x15	; 21
+ 164:	8c 27       	eor	r24, r28
+ 166:	85 bb       	out	0x15, r24	; 21
+ 168:	f2 cf       	rjmp	.-28     	; 0x14e <main+0x8>
+
+0000016a <_exit>:
+ 16a:	f8 94       	cli
+
+0000016c <__stop_program>:
+ 16c:	ff cf       	rjmp	.-2      	; 0x16c <__stop_program>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "SimpleButton2", "SimpleButton2\SimpleButton2.cproj", "{D40B408C-5C9D-4BEE-A9D9-6A583B3D4A25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D40B408C-5C9D-4BEE-A9D9-6A583B3D4A25}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D40B408C-5C9D-4BEE-A9D9-6A583B3D4A25}.Debug|AVR.Build.0 = Debug|AVR
+		{D40B408C-5C9D-4BEE-A9D9-6A583B3D4A25}.Release|AVR.ActiveCfg = Release|AVR
+		{D40B408C-5C9D-4BEE-A9D9-6A583B3D4A25}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

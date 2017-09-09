@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LedBlink", "LedBlink\LedBlink.cproj", "{28466F83-75C1-4583-9D3B-36915AC7AC89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28466F83-75C1-4583-9D3B-36915AC7AC89}.Debug|AVR.ActiveCfg = Debug|AVR
+		{28466F83-75C1-4583-9D3B-36915AC7AC89}.Debug|AVR.Build.0 = Debug|AVR
+		{28466F83-75C1-4583-9D3B-36915AC7AC89}.Release|AVR.ActiveCfg = Release|AVR
+		{28466F83-75C1-4583-9D3B-36915AC7AC89}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
